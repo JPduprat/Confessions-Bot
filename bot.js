@@ -22,8 +22,5 @@ client.on('message', msg => {
     }
 })
 
-//client.channels.cache.get(`970188801232207928`).send(saymsg)
-//message.channel.send(saymsg);
-
 
 client.login(process.env.BOT_TOKEN)
