@@ -16,7 +16,6 @@ client.on('ready', () => {
 const { MessageEmbed } = require('discord.js');
 
 const exampleEmbed = new MessageEmbed()
-    .setColor('RANDOM')
     .setTitle(':man_detective:・Confissão')
     .setDescription("");
 
@@ -31,7 +30,7 @@ client.on('message', msg => {
         } else {
         var saymsg = msg.content;
         msg.channel.send(saymsg);
-        client.channels.cache.get("984278432315760660").send({ embeds: [exampleEmbed.setDescription(saymsg)] })
+        client.channels.cache.get("984278432315760660").send({ embeds: [exampleEmbed.setDescription(saymsg).setColor('RANDOM')] })
         
         cooldown.add(msg.author.id);
         setTimeout(() => {
@@ -41,6 +40,6 @@ client.on('message', msg => {
     }  
 })
 
-//Bot
+//Bots
 
 client.login(process.env.BOT_TOKEN)
