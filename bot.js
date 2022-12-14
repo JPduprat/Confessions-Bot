@@ -1,3 +1,8 @@
+const express = require("express");
+const app = express();
+const PORT = process.env.PORT || 10000;
+
+
 require('dotenv').config()
 
 const Discord = require('discord.js')
@@ -5,7 +10,6 @@ const Discord = require('discord.js')
 const { Client, Intents } = require('discord.js');
 
 const client = new Client({ partials: ["CHANNEL"], intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES,Intents.FLAGS.DIRECT_MESSAGES,Intents.FLAGS.DIRECT_MESSAGE_TYPING] });
-
 
  //INICIO DO BOT
 client.on('ready', () => {
@@ -43,3 +47,7 @@ client.on('message', msg => {
 //Bots
 
 client.login(process.env.BOT_TOKEN);
+
+app.listen(PORT, () => {
+    console.log(`server started on port ${PORT}`);
+  });
